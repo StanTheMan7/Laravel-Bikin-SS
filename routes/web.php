@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view("template.mainH");
+    return view("pages.homeUI");
 });
 Route::get('/backoffice', function () {
-    return view("template.mainB");
+    return view("pages.homeBack");
 });
