@@ -12,6 +12,8 @@
   <!-- Favicons -->
   <link href="{{asset('img/favicon.png')}}" rel="icon">
   <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  {{-- bootstrap --}}
+  <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -38,9 +40,9 @@
 <body>
 
 
-  <div class="container">
+  
     @yield('content')
-  </div>
+
 
 
   <!-- Vendor JS Files -->
@@ -50,6 +52,7 @@
   <script src="{{asset('vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{asset('vendor/php-email-form/validate.js')}}"></script>
   <script src="{{asset('vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{asset('js/app.js')}}"></script>
 
   <!-- Template Main JS File -->
   <script src="{{asset('js/main.js')}}"></script>

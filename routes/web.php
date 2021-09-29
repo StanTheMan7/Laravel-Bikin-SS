@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view("pages.homeUI");
+    return view('pages.homeUI');
 });
-Route::get('/backoffice', function () {
-    return view("pages.homeBack");
-});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
