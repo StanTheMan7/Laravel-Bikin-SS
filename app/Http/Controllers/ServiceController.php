@@ -106,5 +106,6 @@ class ServiceController extends Controller
     {
         $service->delete();
         return redirect()->route('service.index');
+        
     }
 }
