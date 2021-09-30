@@ -11,13 +11,13 @@
     <div style="display: flex; justify-content: center;">
     <div style="display:flex; flex-direction:column">
     <label for="">Title:</label>
-    <input type="text" name="photo" value="{{$service->title}}">
+    <input type="text" name="title" value="{{$service->title}}">
     <br>
     <label for="">Name :</label>
-    <input type="text" name="name" value="{{$service->text}}">
+    <input type="text" name="text" value="{{$service->text}}">
     <br>
     <label for="">Text :</label>
-    <input type="text" name="text" value="{{$service->icon}}">
+    <input type="text" name="icon" value="{{$service->icon}}">
     <br>
     </div>
     </div>

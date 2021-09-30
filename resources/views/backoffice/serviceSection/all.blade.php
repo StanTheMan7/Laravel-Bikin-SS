@@ -27,9 +27,13 @@
         <td>{{$item->text}}</td>
         <td>{{$item->icon}}</td>
         <td>
-            <button class="btn btn-warning">Show</button>
+            <a href="{{route("service.show", $item->id)}}" class="btn btn-warning">Show</a>
             <a href ="{{route("service.edit", $item->id)}}" class="btn btn-success">Edit</a>
-            <button class="btn btn-danger">Delete</button>
+            <form action="{{route("service.destroy", $item->id)}}" method="POST">
+                @csrf   
+                @method('delete')
+            <button type="submit" class="btn btn-danger mt-1">Delete</button>
+            </form>
         </td>
       </tr>    
     @endforeach
