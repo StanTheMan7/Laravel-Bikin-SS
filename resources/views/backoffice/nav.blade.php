@@ -14,7 +14,7 @@
         </li>
 
         <li>
-            <a href="/back/service" class="text-light">
+            <a href="/backoffice/service" class="text-light">
                 <i class='bx bx-folder-open'></i>
                 <span class="links_name">Service</span>
             </a>

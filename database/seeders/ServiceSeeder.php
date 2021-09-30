@@ -16,7 +16,7 @@ class ServiceSeeder extends Seeder
     {
         DB::table('services')->insert([
         [
-            "icon"=>"dribbble",
+            "icon"=>"bell",
             "title"=>"Basket",
             "text"=>"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi"
         ],

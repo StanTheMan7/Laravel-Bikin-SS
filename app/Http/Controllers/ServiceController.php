@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        
+        $services = Service::all();
+        return view("backoffice.serviceSection.all", compact("services"));
     }
 
     /**
@@ -24,7 +25,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view("backoffice.serviceSection.create");
     }
 
     /**
@@ -35,7 +36,12 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service = new Service();
+        $service->title = $request->title;
+        $service->text = $request->text;
+        $service->icon = $request->icon;
+        $service->save();
+        return redirect()->route("service.index");
     }
 
     /**
@@ -57,7 +63,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view("backoffice.serviceSection.edit", compact("service"));
     }
 
     /**
@@ -69,7 +75,11 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $service->title = $request->title;
+        $service->text = $request->text;        
+        $service->icon = $request->icon;
+        $service->save();
+        return redirect()->route("service.index");
     }
 
     /**
