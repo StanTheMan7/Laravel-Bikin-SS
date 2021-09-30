@@ -14,8 +14,8 @@ class About2Controller extends Controller
      */
     public function index()
     {
-       $about2s = About2::all();
-       return view('backoffice.about2Section.all', compact('about2s'));
+        $about2s = About2::all();
+        return view('backoffice.about2Section.all', compact('about2s'));
     }
 
     /**
@@ -87,7 +87,7 @@ class About2Controller extends Controller
         $about2->title = $request->title;
         $about2->description = $request->description;
         $about2->save();
-        return redirect()->route('about2s.index');
+        return redirect()->route('about2.index');
     }
 
     /**
@@ -99,7 +99,7 @@ class About2Controller extends Controller
     public function destroy(About2 $about2)
     {
         $about2->delete();
-        return redirect()->route("about2s.index")->with('message', 'IT WORKS!');
+        return redirect()->route("about2.index")->with('message', 'IT WORKS!');
 
     }
 }

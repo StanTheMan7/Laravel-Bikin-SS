@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -14,7 +15,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::all();
+        return view('backoffice.teamSection.all', compact('teams'));
     }
 
     /**
@@ -24,7 +26,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.teamSection.create');
     }
 
     /**
@@ -35,7 +37,19 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            "url"=>["required"],
+            "name"=>["required", "min:1", "max:500"],
+            "job"=>["required"],
+        ]);
+
+            $team = new Team();
+            $team->url= $request->file("url")->hashName();
+            $request->file("url")->storePublicly("img", "public");
+            $team->name = $request->name;
+            $team->job = $request->job;
+            $team->save();
+        return redirect()->route("team.index");
     }
 
     /**
@@ -46,9 +60,9 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        return view('backoffice.teamDescription.show', compact('team'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -57,7 +71,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        return view('backoffice.teamDescription.show', compact('team'));
     }
 
     /**
@@ -69,8 +83,21 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        request()->validate([
+            "name"=>["required", "min:1", "max:500"],
+            "job"=>["required"],
+        ]);
+            if($request->file('url') !== null){
+                Storage::disk('url')->delete('/img' . $team->url);
+                $team->url= $request->file("url")->hashName();
+                $request->file("url")->storePublicly("img", "public");
+            }
+            $team->name = $request->name;
+            $team->job = $request->job;
+            $team->save();
+        return redirect()->route("team.index");
     }
+    //
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +107,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        Storage::disk('url')->delete('/img' . $team->url);
+        $team->delete();
+        return redirect()->route('team.index');
     }
 }

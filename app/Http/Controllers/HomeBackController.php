@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class HomeBackController extends Controller
 {
     public function index() {
-        
+
         $titleDescriptions = TitleDescription::all();
 
         $heros = Hero::all();
