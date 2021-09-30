@@ -1,5 +1,5 @@
 @extends('template.mainB')
 
-@section('contentB')
-    
+@section('content')
+    <p></p>
 @endsection
