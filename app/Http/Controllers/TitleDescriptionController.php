@@ -14,7 +14,8 @@ class TitleDescriptionController extends Controller
      */
     public function index()
     {
-        //
+        $titlesDescriptions = TitleDescription::all();
+        return view('backoffice.titleDescription.all', compact('titlesDescriptions'));
     }
 
     /**
@@ -46,7 +47,7 @@ class TitleDescriptionController extends Controller
      */
     public function show(TitleDescription $titleDescription)
     {
-        //
+        return view('backoffice.titleDescription.show', compact('titleDescription'));
     }
 
     /**
@@ -57,7 +58,7 @@ class TitleDescriptionController extends Controller
      */
     public function edit(TitleDescription $titleDescription)
     {
-        //
+        return view('backoffice.titleDescription.show', compact('titleDescription'));
     }
 
     /**
@@ -69,7 +70,14 @@ class TitleDescriptionController extends Controller
      */
     public function update(Request $request, TitleDescription $titleDescription)
     {
-        //
+        request()->validate([
+            'title' => ['required'],
+            'description' => ['required']
+        ]);
+
+        $titleDescription->title = $request->title;
+        $titleDescription->description = $request->description;
+
     }
 
     /**
@@ -80,6 +88,7 @@ class TitleDescriptionController extends Controller
      */
     public function destroy(TitleDescription $titleDescription)
     {
-        //
+        $titleDescription->delete();
+        return redirect()->route('title.index');
     }
 }

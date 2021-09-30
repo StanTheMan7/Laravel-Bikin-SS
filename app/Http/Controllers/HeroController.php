@@ -79,7 +79,7 @@ class HeroController extends Controller
             "url"=>["required"]
         ]);
 
-        if ($request->file('img') !== null) {
+        if ($request->file('url') !== null) {
             Storage::disk("public")->delete("img/" . $hero->url);
             $hero->url= $request->file("url")->hashName();
             $request->file("url")->storePublicly("img", "public");
@@ -89,7 +89,7 @@ class HeroController extends Controller
         $hero->description = $request->description;
         $hero->bouton = $request->bouton;
         $hero->save();
-        return redirect()->route("heros.index");
+        return redirect()->route("hero.index");
     }
 
     /**
@@ -102,6 +102,6 @@ class HeroController extends Controller
     {
         Storage::disk("public")->delete("img/" . $hero->url);
         $hero->delete();
-        return redirect()->route("heros.index")->with('message', 'IT WORKS!');
+        return redirect()->route("hero.index")->with('message', 'IT WORKS!');
     }
 }

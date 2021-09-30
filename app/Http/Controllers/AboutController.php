@@ -79,7 +79,7 @@ class AboutController extends Controller
         $about->bouton = $request->bouton;
         $about->save();
         
-        return redirect()->route("abouts.index");
+        return redirect()->route("about.index");
     }
 
     /**
@@ -91,7 +91,7 @@ class AboutController extends Controller
     public function destroy(About $about)
     {
         $about->delete();
-        return redirect()->route("abouts.index")->with('message', 'IT WORKS!');
+        return redirect()->route("about.index")->with('message', 'IT WORKS!');
 
     }
 }

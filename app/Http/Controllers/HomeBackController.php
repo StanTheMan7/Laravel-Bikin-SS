@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class HomeBackController extends Controller
 {
     public function index() {
-        
+
         $titleDescriptions = TitleDescription::all();
 
         $heros = Hero::all();
@@ -25,6 +25,6 @@ class HomeBackController extends Controller
         $features = Feature::all();
 
         $teams = Team::all();
-        return view('pages.homeUI',compact('titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
+        return view('pages.homeBack',compact('titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
     }
 }
