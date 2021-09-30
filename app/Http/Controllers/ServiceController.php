@@ -60,7 +60,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return  view('backoffice.serviceSection.show');
+        return  view('backoffice.serviceSection.show', compact("service"));
     }
 
     /**
@@ -71,7 +71,11 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+<<<<<<< HEAD
         return view("backoffice.serviceSection.edit", compact("service"));
+=======
+        return  view('backoffice.serviceSection.show');
+>>>>>>> 30484d53e27306de606e9733e8d93458f98393eb
     }
 
     /**
@@ -105,7 +109,11 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
+<<<<<<< HEAD
         return redirect()->route('service.index');
         
+=======
+        return redirect()->route("service.index");
+>>>>>>> 30484d53e27306de606e9733e8d93458f98393eb
     }
 }
