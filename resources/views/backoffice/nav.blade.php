@@ -6,11 +6,19 @@
     </div>
     <ul class="nav-list ">
         <li>
-            <a href="/back/about" class="text-light">
+            <a href="/backoffice/about" class="text-light">
                 <i class='bx bx-question-mark'></i>
                 <span class="links_name">About</span>
             </a>
             <span class="tooltip">About</span>
+        </li>
+
+        <li>
+            <a href="/backoffice/about2" class="text-light">
+                <i class='bx bx-question-mark'></i>
+                <span class="links_name">About 2</span>
+            </a>
+            <span class="tooltip">About 2</span>
         </li>
 
         <li>

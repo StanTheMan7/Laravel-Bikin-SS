@@ -18,7 +18,7 @@ class HomeController extends Controller
 
         $heros = Hero::all();
 
-        $abouts = About::all();
+        $abouts = About::first();
 
         $about2s = About2::all();
 
