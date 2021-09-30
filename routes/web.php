@@ -1,9 +1,12 @@
 <?php
 
-
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 
 /*
@@ -32,8 +35,10 @@ require __DIR__.'/auth.php';
 
 
 
-
-
+Route::resource('/backoffice/hero', HeroController::class);
+Route::resource('/backoffice/about', AboutController::class);
+Route::resource('/backoffice/feature', FeatureController::class);
+Route::resource('/backoffice/team', TeamController::class);
 Route::resource('/backoffice/service', ServiceController::class);
 Route::resource('/backoffice/testimonials', TestimonialController::class);
 Route::resource('/backoffice/contact', ContactController::class);
