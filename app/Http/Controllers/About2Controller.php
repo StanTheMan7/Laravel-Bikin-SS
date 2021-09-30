@@ -25,8 +25,7 @@ class About2Controller extends Controller
      */
     public function create()
     {
-        
-    }
+        return view('backoffice.about2Section.create');    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +35,15 @@ class About2Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            "url"=>["required", "min:1", "max:240"]
+        ]);
+        $about2 = new About2;
+        $about2->icone = $request->icone;
+        $about2->title = $request->title;
+        $about2->description = $request->description ;
+        $about2->save();
+        return redirect()->route("about2s.index");
     }
 
     /**
