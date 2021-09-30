@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\View\ViewName;
 
 class ServiceController extends Controller
 {
@@ -15,7 +16,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view("backoffice.serviceSection.all", compact("services"));
+        return view('backoffice.serviceSection.all', compact('services'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view("backoffice.serviceSection.create");
+        return  view('backoffice.serviceSection.create');
     }
 
     /**
@@ -36,11 +37,18 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $service = new Service();
-        $service->title = $request->title;
-        $service->text = $request->text;
-        $service->icon = $request->icon;
-        $service->save();
+        
+        request()->validate([
+            "icon"=>["required"],
+            "title"=>["required", "min:1", "max:500"],
+            "text"=>["required"],
+        ]);
+
+            $service = new Service();
+            $service->icon = $request->icon;
+            $service->title = $request->title;
+            $service->text = $request->text;
+            $service->save();
         return redirect()->route("service.index");
     }
 
@@ -52,7 +60,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return  view('backoffice.serviceSection.show');
     }
 
     /**
@@ -63,7 +71,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view("backoffice.serviceSection.edit", compact("service"));
+        return  view('backoffice.serviceSection.show');
     }
 
     /**
@@ -75,10 +83,16 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        $service->title = $request->title;
-        $service->text = $request->text;        
-        $service->icon = $request->icon;
-        $service->save();
+        request()->validate([
+            "icon"=>["required"],
+            "title"=>["required", "min:1", "max:500"],
+            "text"=>["required"],
+        ]);
+
+            $service->icon = $request->icon;
+            $service->title = $request->title;
+            $service->text = $request->text;
+            $service->save();
         return redirect()->route("service.index");
     }
 

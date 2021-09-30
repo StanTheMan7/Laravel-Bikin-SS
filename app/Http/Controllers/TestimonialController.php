@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
@@ -14,7 +15,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $testimonials = Testimonial::all(); 
+        return view('backoffice.testimonialSection.all', compact('testimonials'));
     }
 
     /**
@@ -24,8 +26,9 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.testimonialSection.create');
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +38,21 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'text'=>['required'],
+            'photo'=>['required'],
+            'name'=>['required'],
+            'job'=>['required']
+        ]);
+        $testimonial =  new Testimonial();
+        $testimonial->text = $request->text;
+        $testimonial->photo->file('photo')->hashName();
+        $request->file("photo")->storePublicly("img", "public");
+        $testimonial->name = $request->name;
+        $testimonial->job = $request->job;
+        $testimonial->save();
+        return redirect()->route("testimonials.index");
+        
     }
 
     /**
@@ -46,7 +63,7 @@ class TestimonialController extends Controller
      */
     public function show(Testimonial $testimonial)
     {
-        //
+        return view('backoffice.testimonialSection.show', compact('testimonial'));
     }
 
     /**
@@ -57,7 +74,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
-        //
+        return view('backoffice.testimonialSection.show', compact('testimonial'));
     }
 
     /**
@@ -69,7 +86,22 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, Testimonial $testimonial)
     {
-        //
+        request()->validate([
+            'text'=>['required'],
+            'name'=>['required'],
+            'job'=>['required']
+        ]);
+
+        if ($request->file('photo') !== null) {
+            Storage::disk('photo')->delete('/img' . $testimonial->photo);
+            $testimonial->photo= $request->file("photo")->hashName();
+            $request->file("photo")->storePublicly("img", "public");
+        }
+        $request->file("photo")->storePublicly("img", "public");
+        $testimonial->name = $request->name;
+        $testimonial->job = $request->job;
+        $testimonial->save();
+        return redirect()->route("testimonials.index");
     }
 
     /**
@@ -80,6 +112,8 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        //
+        Storage::disk('photo')->delete('/img' . $testimonial->photo);
+        $testimonial->delete();
+        return redirect()->route('testimonials.index');
     }
 }
