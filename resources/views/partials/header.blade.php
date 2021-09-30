@@ -17,7 +17,7 @@
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
           @auth
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="">Dashboard</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/backoffice">Dashboard</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         {{-- LOGOUT --}}

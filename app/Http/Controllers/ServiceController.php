@@ -16,7 +16,11 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
+<<<<<<< HEAD
         return view('backoffice.serviceSection.all', compact('services'));
+=======
+        return view("backoffice.serviceSection.all", compact("services"));
+>>>>>>> f223af4b18f91f64d6a1cc146d434d6305c1753d
     }
 
     /**
@@ -26,7 +30,11 @@ class ServiceController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         return  view('backoffice.serviceSection.create');
+=======
+        return view("backoffice.serviceSection.create");
+>>>>>>> f223af4b18f91f64d6a1cc146d434d6305c1753d
     }
 
     /**
@@ -37,6 +45,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         
         request()->validate([
             "icon"=>["required"],
@@ -49,6 +58,13 @@ class ServiceController extends Controller
             $service->title = $request->title;
             $service->text = $request->text;
             $service->save();
+=======
+        $service = new Service();
+        $service->title = $request->title;
+        $service->text = $request->text;
+        $service->icon = $request->icon;
+        $service->save();
+>>>>>>> f223af4b18f91f64d6a1cc146d434d6305c1753d
         return redirect()->route("service.index");
     }
 
@@ -71,7 +87,11 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+<<<<<<< HEAD
         return  view('backoffice.serviceSection.show');
+=======
+        return view("backoffice.serviceSection.edit", compact("service"));
+>>>>>>> f223af4b18f91f64d6a1cc146d434d6305c1753d
     }
 
     /**
@@ -83,6 +103,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+<<<<<<< HEAD
         request()->validate([
             "icon"=>["required"],
             "title"=>["required", "min:1", "max:500"],
@@ -93,6 +114,12 @@ class ServiceController extends Controller
             $service->title = $request->title;
             $service->text = $request->text;
             $service->save();
+=======
+        $service->title = $request->title;
+        $service->text = $request->text;        
+        $service->icon = $request->icon;
+        $service->save();
+>>>>>>> f223af4b18f91f64d6a1cc146d434d6305c1753d
         return redirect()->route("service.index");
     }
 

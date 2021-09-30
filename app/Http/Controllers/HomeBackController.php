@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\About2;
 use App\Models\Feature;
 use App\Models\Hero;
+use App\Models\Service;
 use App\Models\Team;
 use App\Models\TitleDescription;
 use Illuminate\Http\Request;
@@ -25,6 +26,8 @@ class HomeBackController extends Controller
         $features = Feature::all();
 
         $teams = Team::all();
-        return view('pages.homeBack',compact('titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
+        $services = Service::all();
+
+        return view('pages.homeBack',compact("services",'titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
     }
 }
