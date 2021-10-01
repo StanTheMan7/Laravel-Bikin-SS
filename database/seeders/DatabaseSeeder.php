@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TitleDescriptionSeeder::class,
             AboutSeeder::class,
-            About2Seeder::class
+            About2Seeder::class,
+            FeatureSeeder::class
         ]
         );
     }
