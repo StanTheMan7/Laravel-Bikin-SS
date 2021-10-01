@@ -4,27 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function index(){
+        $portfolios = Portfolio::all();
+        return view('backoffice.portfolio.all', compact('portfolios'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('backoffice.portfolio.create');
     }
 
     /**
@@ -35,7 +25,18 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            "url"=>["required"],
+            "title"=>["required"],
+            "description"=>["required"],
+        ]);
+        $portfolio = new Portfolio();
+        $portfolio->url= $request->file("url")->hashName();
+        $request->file("url")->storePublicly("img", "public");
+        $portfolio->title = $request->title;
+        $portfolio->description = $request->description;
+        $portfolio->save();
+        return redirect()->route("portfolio.index");
     }
 
     /**
@@ -46,7 +47,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        return view('backoffice.portfolio.show',compact('portfolio') );
     }
 
     /**
@@ -57,7 +58,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        return view('backoffice.portfolio.edit',compact('portfolio') );
     }
 
     /**
@@ -69,7 +70,20 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
-        //
+        request()->validate([
+            "title"=>["required"],
+            "description"=>["required"]
+        ]);
+        if($request->file('url') !== null){
+            Storage::disk('public')->delete('/img' . $portfolio->url);
+            $portfolio->url= $request->file("url")->hashName();
+            $request->file("url")->storePublicly("img", "public");
+        }
+        $portfolio->title = $request->title;
+        $portfolio->description = $request->description;
+
+        $portfolio->save();
+        return redirect()->route("portfolio.index");
     }
 
     /**
@@ -80,6 +94,10 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        Storage::disk('public')->delete('/img' . $portfolio->url);
+        $portfolio->delete();
+        return redirect()->route('portfolio.index');
     }
 }
+
+

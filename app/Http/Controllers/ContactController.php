@@ -14,7 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        
+        $contacts  = Contact::all();
+        return view('backoffice.contactSection.all', compact('contacts'));
     }
 
     /**
@@ -46,7 +47,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('backoffice.contactSection.show', compact('contact'));
     }
 
     /**
@@ -57,7 +58,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('backoffice.contactSection.edit', compact('contact'));
     }
 
     /**
@@ -69,7 +70,21 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $request->validate([
+            'address'=>['required'],
+            'mail1'=>['required'],
+            'mail2'=>['required'],
+            'num1'=>['required'],
+            'num2'=>['required']
+        ]);
+
+        $contact->address = $request->address;
+        $contact->main1 = $request->main1;
+        $contact->mail2 = $request->mail2;
+        $contact->num1 = $request->num1;
+        $contact->num2 = $request->num2;
+        $contact->save();;
+        return redirect()->route('contact.index');
     }
 
     /**
@@ -80,6 +95,7 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        return redirect()->route('contact.index');
     }
 }

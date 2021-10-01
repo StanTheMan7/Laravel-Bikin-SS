@@ -9,6 +9,7 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\HomeBackController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitleDescriptionController;
@@ -38,6 +39,7 @@ Route::resource('/backoffice/about2', About2Controller::class);
 Route::resource('/backoffice/feature', FeatureController::class);
 Route::resource('/backoffice/team', TeamController::class);
 Route::resource('/backoffice/service', ServiceController::class);
+Route::resource('/backoffice/portfolio', PortfolioController::class);
 Route::resource('/backoffice/testimonials', TestimonialController::class);
 Route::resource('/backoffice/contact', ContactController::class);
 
