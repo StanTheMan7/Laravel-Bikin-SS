@@ -6,7 +6,7 @@
     <h1>Services</h1>
 </div>
 <div style="display: flex; justify-content:center;">
-    <a class="btn btn-info" href="{{route("portfolio.create")}}">Create</a>
+    <a class="btn btn-info" href="{{route("service.create")}}">Create</a>
 </div>
 
 <table class="table">

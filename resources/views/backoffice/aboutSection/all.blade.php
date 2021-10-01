@@ -10,7 +10,6 @@
             <a class="btn btn-success" href="{{route("about.edit", $abouts[0]->id)}}">Edit</a>
             <a class="btn btn-warning" href="{{route("about.show", $abouts[0]->id)}}">Show</a>
         </div>
-       
     </div>
 </div>
 @endsection
