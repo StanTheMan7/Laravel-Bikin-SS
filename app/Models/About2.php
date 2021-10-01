@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class About2 extends Model
 {
     use HasFactory;
+    protected $table = 'about2s' ;
+
+    protected $fillable = [
+        'icone', 
+        'title',
+        'description'
+    ];
 }
