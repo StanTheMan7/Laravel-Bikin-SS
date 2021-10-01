@@ -9,20 +9,14 @@
     <br><br><br>
     <div style="display: flex; justify-content: center;">
     <div style="display:flex; flex-direction:column">
-        <label for="">Address :</label>
-        <input type="text" name="address" value="{{$contact->address}}">
+        <label for="">icone :</label>
+        <input type="text" name="icone" value="{{$about2->icone}}">
         <br>
-        <label for="">Mail1:</label>
-        <input type="text" name="mail1" value="{{$contact->mail1}}">
+        <label for="">title:</label>
+        <input type="text" name="title" value="{{$about2->title}}">
         <br>
-        <label for="">Mail2 :</label>
-        <input type="text" name="mail2" value="{{$contact->mail2}}">
-        <br>
-        <label for="">Num1 :</label>
-        <input type="text" name="description" value="{{$contact->num1}}">
-        <br>
-        <label for="">Num2 :</label>
-        <input type="text" name="description" value="{{$contact->num2}}">
+        <label for="">description :</label>
+        <input type="text" name="description" value="{{$about2->description}}">
         
     </div>
 </div>

@@ -3,7 +3,7 @@
 @section('content')
     
 <br>
-<h1 style="text-align: center">Customers</h1>
+<h1 style="text-align: center">Services</h1>
 <br>
 
 <div style="display: flex; justify-content: center;">
