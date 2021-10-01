@@ -79,6 +79,14 @@
             <span class="tooltip">Users</span>
         </li>
 
+        li>
+        <a href="/backoffice/title" class="text-light">
+            <i class='bx bx-text'></i>
+            <span class="links_name">Titles & Description</span>
+        </a>
+            <span class="tooltip">Title & Description</span>
+        </li>
+
 
         <li class="profile">
             <div class="profile-details">

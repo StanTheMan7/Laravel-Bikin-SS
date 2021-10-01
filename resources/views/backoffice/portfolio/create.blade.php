@@ -3,16 +3,16 @@
 @section('content')
     
 <br>
-<h1 style="text-align: center">Customers</h1>
+<h1 style="text-align: center">Portfolio</h1>
 <br>
 
 <div style="display: flex; justify-content: center;">
-    <form action="{{route("service.store")}}" method="post" enctype="multipart/form-data">
+    <form action="{{route("portfolio.store")}}" method="post" enctype="multipart/form-data">
         @csrf
         <div style="display:flex; flex-direction:column">
+    <input type="file" name="url" placeholder="url" value="{{ old('url') }}">
     <input type="text" name="title" placeholder="title" value="{{ old('title') }}">
-    <input type="text" name="text" placeholder="text" value="{{ old('text') }}">
-    <input type="text" name="icon" placeholder="Icon" value="{{ old('icon') }}">
+    <input type="text" name="description" placeholder="description" value="{{ old('description') }}">
     <br>
     <button class="btn btn-success" type="submit">Validate</button>
         </div>

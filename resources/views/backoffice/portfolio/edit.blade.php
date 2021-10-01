@@ -4,20 +4,20 @@
 @section('content')
     
 
-<form enctype="multipart/form-data" action="{{route("service.update", $service->id)}}" method="POST">
+<form enctype="multipart/form-data" action="{{route("portfolio.update", $portfolio->id)}}" method="POST">
     @csrf
     @method("PUT")
     <br><br><br>
     <div style="display: flex; justify-content: center;">
     <div style="display:flex; flex-direction:column">
     <label for="">Title:</label>
-    <input type="text" name="title" value="{{$service->title}}">
+    <input type="file" name="url" value="{{$portfolio->url}}">
     <br>
     <label for="">Name :</label>
-    <input type="text" name="text" value="{{$service->text}}">
+    <input type="text" name="title" value="{{$portfolio->title}}">
     <br>
     <label for="">Text :</label>
-    <input type="text" name="icon" value="{{$service->icon}}">
+    <input type="text" name="description" value="{{$portfolio->description}}">
     <br>
     </div>
     </div>
