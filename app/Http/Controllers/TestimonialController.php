@@ -74,7 +74,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
-        return view('backoffice.testimonialSection.show', compact('testimonial'));
+        return view('backoffice.testimonialSection.edit', compact('testimonial'));
     }
 
     /**
