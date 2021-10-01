@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             TitleDescriptionSeeder::class,
+            AboutSeeder::class,
+            About2Seeder::class
         ]
         );
     }

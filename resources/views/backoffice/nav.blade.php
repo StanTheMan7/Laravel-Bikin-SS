@@ -14,6 +14,14 @@
         </li>
 
         <li>
+            <a href="/backoffice/about2" class="text-light">
+                <i class='bx bx-question-mark'></i>
+                <span class="links_name">About 2</span>
+            </a>
+            <span class="tooltip">About 2</span>
+        </li>
+
+        <li>
             <a href="/backoffice/service" class="text-light">
                 <i class='bx bx-folder-open'></i>
                 <span class="links_name">Service</span>
