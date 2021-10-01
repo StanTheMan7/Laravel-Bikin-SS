@@ -8,6 +8,7 @@ use App\Models\Feature;
 use App\Models\Hero;
 use App\Models\Service;
 use App\Models\Team;
+use App\Models\Testimonial;
 use App\Models\TitleDescription;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,9 @@ class HomeController extends Controller
         $features = Feature::all();
 
         $teams = Team::all();
+
+        $testimonials = Testimonial::all();
+        
         $services = Service::all();
         return view('pages.homeUI',compact('services','titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
     }

@@ -6,7 +6,7 @@
     </div>
     <ul class="nav-list ">
         <li>
-            <a href="/back/about" class="text-light">
+            <a href="/backoffice/about" class="text-light">
                 <i class='bx bx-question-mark'></i>
                 <span class="links_name">About</span>
             </a>

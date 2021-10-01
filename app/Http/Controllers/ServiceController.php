@@ -71,7 +71,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return  view('backoffice.serviceSection.show' );
+        return  view('backoffice.serviceSection.edit', compact("service"));
     }
 
     /**
@@ -105,7 +105,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect()->route('service.index');
-        
+        return redirect()->route("service.index");
     }
 }
