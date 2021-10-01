@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             About2Seeder::class,
             FeatureSeeder::class,
-            TeamSeeder::class
+            TeamSeeder::class,
+            PortfolioSeeder::class
             
         ]
         );
