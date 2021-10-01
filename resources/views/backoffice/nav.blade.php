@@ -54,7 +54,7 @@
         </li>
         <li>
 
-        <a href="/backpoffice/team" class="text-light">
+        <a href="/backoffice/team" class="text-light">
             <i class='bx bx-book-content'></i>
             <span class="links_name">Team</span>
         </a>
@@ -62,7 +62,7 @@
         </li>
         <li>
  
-        <a href="/backoffice/Contact" class="text-light">
+        <a href="/backoffice/contact" class="text-light">
             <i class='bx bx-map-pin'></i>
             <span class="links_name">Contact</span>
         </a>
@@ -72,10 +72,10 @@
  
     
         <li>
-            <a href="/back/user" class="text-light">
+        <a href="/back/user" class="text-light">
                 <i class='bx bx-user'></i>
                 <span class="links_name">Users</span>
-            </a>
+        </a>
             <span class="tooltip">Users</span>
         </li>
 
