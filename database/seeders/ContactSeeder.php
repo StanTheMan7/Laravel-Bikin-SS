@@ -15,7 +15,7 @@ class ContactSeeder extends Seeder
     public function run()
     {
         DB::table('contacts')->insert([
-            "address"=>"Rue de lalalalalal 1020",
+            "address"=>"Rue de lalalalalal 58, 1020, Laeken",
             "mail1"=>"lolololol@test.com",
             "mail2"=>"lellelell@test.com",
             "num1"=>"111322138218",

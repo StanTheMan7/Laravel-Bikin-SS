@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
             TitleDescriptionSeeder::class,
             AboutSeeder::class,
             About2Seeder::class,
-            FeatureSeeder::class
+            FeatureSeeder::class,
+            TeamSeeder::class
+            
         ]
         );
     }
