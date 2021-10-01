@@ -22,6 +22,14 @@
         </li>
 
         <li>
+            <a href="/backoffice/feature" class="text-light">
+                <i class='bx bx-user-pin'></i>
+                <span class="links_name">Features</span>
+            </a>
+            <span class="tooltip">Features</span>
+        </li>
+
+        <li>
             <a href="/backoffice/service" class="text-light">
                 <i class='bx bx-folder-open'></i>
                 <span class="links_name">Service</span>
@@ -30,58 +38,39 @@
         </li>
 
         <li>
-            <a href="/" class="text-light">
-                <i class='bx bx-user-pin'></i>
-                <span class="links_name">Chef</span>
-            </a>
-            <span class="tooltip">Chef</span>
-        </li>
-        <li>
-        <a href="/back/icon" class="text-light">
+        <a href="/backoffice/portfolio" class="text-light">
             <i class='bx bx-circle'></i>
-            <span class="links_name">Icon</span>
+            <span class="links_name">Portfolio</span>
         </a>
-        <span class="tooltip">Icon</span>
+        <span class="tooltip">Portfolio</span>
         </li>
         <li>
 
-        <a href="/back/sociallink" class="text-light">
+        <a href="/backoffice/testimonials" class="text-light">
             <i class='bx bx-link'></i>
-            <span class="links_name">Social Links</span>
+            <span class="links_name">Testimonials</span>
         </a>
-        <span class="tooltip">Social Links</span>
+        <span class="tooltip">Testimonials</span>
         </li>
         <li>
 
-        <a href="/back/customer" class="text-light">
+        <a href="/backpoffice/team" class="text-light">
             <i class='bx bx-book-content'></i>
-            <span class="links_name">Customers</span>
+            <span class="links_name">Team</span>
         </a>
-        <span class="tooltip">Customers</span>
+        <span class="tooltip">Team</span>
         </li>
         <li>
  
-        <a href="/back/table" class="text-light">
+        <a href="/backoffice/Contact" class="text-light">
             <i class='bx bx-map-pin'></i>
-            <span class="links_name">Adresse</span>
+            <span class="links_name">Contact</span>
         </a>
-        <span class="tooltip">Adresse</span>
+        <span class="tooltip">Contact</span>
         </li>
         <li>
  
-        <a href="/back/heure" class="text-light">
-            <i class='bx bx-hourglass'></i>
-            <span class="links_name">Heures</span>
-        </a>
-        <span class="tooltip">Heures</span>
-        </li>
-        <li>
-            <a href="/" class="text-light">
-                <i class='bx bx-chat'></i>
-                <span class="links_name">Footer</span>
-            </a>
-            <span class="tooltip">Footer</span>
-        </li>
+    
         <li>
             <a href="/back/user" class="text-light">
                 <i class='bx bx-user'></i>

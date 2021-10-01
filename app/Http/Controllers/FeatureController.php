@@ -76,7 +76,7 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-        return view('backoffice.featureSection.show',compact('feature') );
+        return view('backoffice.featureSection.edit',compact('feature') );
     }
 
     /**
