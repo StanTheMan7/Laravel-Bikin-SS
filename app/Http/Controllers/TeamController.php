@@ -71,7 +71,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        return view('backoffice.teamDescription.show', compact('team'));
+        return view('backoffice.teamDescription.edit', compact('team'));
     }
 
     /**

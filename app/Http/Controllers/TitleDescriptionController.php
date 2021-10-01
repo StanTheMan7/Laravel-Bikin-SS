@@ -14,8 +14,8 @@ class TitleDescriptionController extends Controller
      */
     public function index()
     {
-        $titlesDescriptions = TitleDescription::all();
-        return view('backoffice.titleDescription.all', compact('titlesDescriptions'));
+        $titleDescription = TitleDescription::all();
+        return view('backoffice.titleDescription.all', compact('titleDescription'));
     }
 
     /**
@@ -56,9 +56,10 @@ class TitleDescriptionController extends Controller
      * @param  \App\Models\TitleDescription  $titleDescription
      * @return \Illuminate\Http\Response
      */
-    public function edit(TitleDescription $titleDescription)
+    public function edit($id)
     {
-        return view('backoffice.titleDescription.show', compact('titleDescription'));
+        $titleDescription = TitleDescription::find($id);
+        return view('backoffice.titleDescription.edit', compact('titleDescription'));
     }
 
     /**
@@ -77,6 +78,8 @@ class TitleDescriptionController extends Controller
 
         $titleDescription->title = $request->title;
         $titleDescription->description = $request->description;
+        $titleDescription->save();
+        return redirect()->route('title.index');
 
     }
 
