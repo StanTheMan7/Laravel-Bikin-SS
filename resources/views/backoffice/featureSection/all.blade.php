@@ -31,7 +31,11 @@
             <td>{{$item->p1}}</td>
             <td>{{$item->p2}}</td>
             <td>{{$item->p3}}</td>
-            <td>{{$item->url}}</td>
+            <td>@if (Storage::disk('public')->exists('img/' . $item->url))
+              <img class="w-40" src="{{ asset('img/' . $item->url) }}" alt="">
+              @else
+                <img class="w-40" src="{{ $item->url }}" alt="">
+              @endif</td></td>
             <td>
                 <a href="{{route("feature.show", $item->id)}}" class="btn btn-warning">Show</a>
                 <a href ="{{route("feature.edit", $item->id)}}" class="btn btn-success">Edit</a>
