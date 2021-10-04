@@ -29,7 +29,9 @@
         </div>
       @endforeach
 
+      <div class="container">        
+         {{$teams->links()}}      
+            </div>
       </div>
-
     </div>
   </section><!-- End Team Section -->
