@@ -25,6 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('user-block');
         return view('backoffice.users.create');
     }
 

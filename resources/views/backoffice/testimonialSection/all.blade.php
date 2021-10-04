@@ -25,7 +25,11 @@
         <td>{{$item->name}}</td>
         <td>{{$item->text}}</td>
         <td>{{$item->job}}</td>
-        <td>{{$item->photo}}</td>
+        <td>@if (Storage::disk('public')->exists('img/' . $item->photo))
+          <img class="w-40" src="{{ asset('img/' . $item->photo) }}" alt="">
+          @else
+            <img class="w-40" src="{{ $item->photo }}" alt="">
+          @endif</td>
         
         <td>
             <a href="{{route("testimonials.show", $item->id)}}" class="btn btn-warning">Show</a>

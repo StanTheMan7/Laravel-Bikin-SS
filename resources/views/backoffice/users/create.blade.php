@@ -12,9 +12,12 @@
         <div style="display:flex; flex-direction:column">
     <input type="text" name="name" placeholder="name" value="{{ old('name') }}">
     <input type="text" name="email" placeholder="email" value="{{ old('email') }}">
-    <input type="file" name="password" placeholder="password" value="{{ old('password') }}">
-    <input type="file" name="role_id" placeholder="role_id" value="{{ old('role_id') }}">
-
+    <input type="password" name="password" placeholder="password" value="{{ old('password') }}">
+    <input type="text" name="role_id" placeholder="rôle" value="{{ old('role_id') }}">
+    <span><i>Pour le rôle = 
+        <ol><li>1. Admin</li>
+        <li>2. Editeur</li>
+        <li>3. Webmaster</li></ol></i></span>
     <br>
     <button class="btn btn-success" type="submit">Validate</button>
         </div>

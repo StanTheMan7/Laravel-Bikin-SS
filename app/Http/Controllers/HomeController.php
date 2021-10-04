@@ -26,7 +26,7 @@ class HomeController extends Controller
 
         $features = Feature::all();
 
-        $teams = Team::all();
+        $teams = Team::paginate(4);
 
         $testimonials = Testimonial::all();
         
