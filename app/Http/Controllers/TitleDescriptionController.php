@@ -58,6 +58,7 @@ class TitleDescriptionController extends Controller
      */
     public function edit($id)
     {
+        // ensiene methode 
         $titleDescription = TitleDescription::find($id);
         return view('backoffice.titleDescription.edit', compact('titleDescription'));
     }

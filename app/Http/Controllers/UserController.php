@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('backoffice.users.all', compact('users') );
     }
 
     /**
@@ -24,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.users.create');
     }
 
     /**
@@ -35,7 +36,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'name'=> ['required'],
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->email_verified_at = $request->email_verified_at;
+        $user->password = $request->password;
+        $user->role_id = $request->role_id;
+        $user->save();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -46,7 +60,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('backoffice.users.show', compact('user'));
     }
 
     /**
@@ -57,7 +71,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('backoffice.users.edit', compact('user'));
     }
 
     /**
@@ -69,7 +83,19 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        request()->validate([
+            'name'=> ['required'],
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->email_verified_at = $request->email_verified_at;
+        $user->password = $request->password;
+        $user->role_id = $request->role_id;
+        $user->save();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -80,6 +106,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }

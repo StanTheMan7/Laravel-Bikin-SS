@@ -27,8 +27,10 @@
         <td>{{$item->title}}</td>
         <td>{{$item->text}}</td>
         <td>
-            <a href="{{route("about2.show", $item->id)}}" class="btn btn-warning">Show</a>
+            @can('about2-edit', $item)
             <a href ="{{route("about2.edit", $item->id)}}" class="btn btn-success">Edit</a>
+            @endcan
+            <a href="{{route("about2.show", $item->id)}}" class="btn btn-warning">Show</a>
             <form action="{{route("about2.destroy", $item->id)}}" method="POST">
                 @csrf   
                 @method('delete')

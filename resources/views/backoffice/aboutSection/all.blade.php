@@ -7,7 +7,9 @@
         <p><b>Description de l'about 1 = </b>{{$abouts[0]->description}}</p>
         <p><b>Icone de l'about 1 = </b>{{$abouts[0]->bouton}}</p>
         <div style="display: flex; justify-content:center;">
-            <a class="btn btn-success" href="{{route("about.edit", $abouts[0]->id)}}">Edit</a>
+            @can('about-edit', $abouts[0])
+                <a class="btn btn-success" href="{{route("about.edit", $abouts[0]->id)}}">Edit</a>
+            @endcan
             <a class="btn btn-warning" href="{{route("about.show", $abouts[0]->id)}}">Show</a>
         </div>
     </div>

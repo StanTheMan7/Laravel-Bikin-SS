@@ -55,7 +55,7 @@
         <li>
 
         <a href="/backoffice/team" class="text-light">
-            <i class='bx bx-book-content'></i>
+            <i class='bx bxl-microsoft-teams' ></i>
             <span class="links_name">Team</span>
         </a>
         <span class="tooltip">Team</span>
@@ -63,30 +63,36 @@
         <li>
  
         <a href="/backoffice/contact" class="text-light">
-            <i class='bx bx-map-pin'></i>
+            <i class='bx bxs-phone' ></i>
             <span class="links_name">Contact</span>
         </a>
         <span class="tooltip">Contact</span>
         </li>
         <li>
- 
-    
+
         <li>
-        <a href="/back/user" class="text-light">
-                <i class='bx bx-user'></i>
-                <span class="links_name">Users</span>
+        <a href="/backoffice/title" class="text-light">
+            <i class='bx bx-text'></i>
+            <span class="links_name">Titles</span>
         </a>
+            <span class="tooltip">Title</span>
+        </li>
+
+        <li>
+            <a href="/backoffice/user" class="text-light">
+                <i class='bx bx-user-pin'></i>
+                <span class="links_name">Users</span>
+            </a>
             <span class="tooltip">Users</span>
         </li>
 
-        li>
-        <a href="/backoffice/title" class="text-light">
-            <i class='bx bx-text'></i>
-            <span class="links_name">Titles & Description</span>
-        </a>
-            <span class="tooltip">Title & Description</span>
-        </li>
-
+        <li>
+            <a href="/backoffice/footer" class="text-light">
+                <i class='bx bx-text'></i>
+                <span class="links_name">Footer</span>
+            </a>
+                <span class="tooltip">Footer</span>
+            </li>
 
         <li class="profile">
             <div class="profile-details">

@@ -56,7 +56,8 @@ class AboutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(About $about)
-    {
+    {   
+        $this->authorize('about-edit', $about);
         return view('backoffice.aboutSection.edit', compact('about'));
     }
 

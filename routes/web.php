@@ -13,6 +13,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitleDescriptionController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+Route::resource('backoffice/user', UserController::class);
 Route::resource('/backoffice/title', TitleDescriptionController::class);
 Route::resource('/backoffice/hero', HeroController::class);
 Route::resource('/backoffice/about', AboutController::class);

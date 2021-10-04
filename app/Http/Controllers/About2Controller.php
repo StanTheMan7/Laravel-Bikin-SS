@@ -37,7 +37,9 @@ class About2Controller extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            "url"=>["required", "min:1", "max:240"]
+            'icone' => ['required'],
+            'title' => ['required'],
+            'description' => ['required']
         ]);
         $about2 = new About2;
         $about2->icone = $request->icone;
@@ -66,6 +68,7 @@ class About2Controller extends Controller
      */
     public function edit(About2 $about2)
     {
+        $this->authorize('about2-edit', $about2);
         return view('backoffice.about2Section.edit', compact('about2'));
     }
 
