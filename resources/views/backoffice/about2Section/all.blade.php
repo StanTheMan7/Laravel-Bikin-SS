@@ -13,7 +13,6 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Icon</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">Actions</th>
@@ -23,9 +22,8 @@
     @foreach ($about2s as $item)
     <tr>
         <th scope="row">{{$item->id}}</th>
-        <td>{{$item->icon}}</td>
         <td>{{$item->title}}</td>
-        <td>{{$item->text}}</td>
+        <td>{{$item->description}}</td>
         <td>
             @can('about2-edit', $item)
             <a href ="{{route("about2.edit", $item->id)}}" class="btn btn-success">Edit</a>

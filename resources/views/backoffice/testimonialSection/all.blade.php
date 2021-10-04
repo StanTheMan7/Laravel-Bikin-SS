@@ -26,14 +26,17 @@
         <td>{{$item->text}}</td>
         <td>{{$item->job}}</td>
         <td>{{$item->photo}}</td>
+        
         <td>
             <a href="{{route("testimonials.show", $item->id)}}" class="btn btn-warning">Show</a>
             <a href ="{{route("testimonials.edit", $item->id)}}" class="btn btn-success">Edit</a>
+            @can('tes-del', $item)
             <form action="{{route("testimonials.destroy", $item->id)}}" method="POST">
                 @csrf   
                 @method('delete')
             <button type="submit" class="btn btn-danger mt-1">Delete</button>
             </form>
+            @endcan
         </td>
       </tr>    
     @endforeach

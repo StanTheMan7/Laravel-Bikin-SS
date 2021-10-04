@@ -100,6 +100,7 @@ class FeatureController extends Controller
             $feature->url= $request->file("url")->hashName();
             $request->file("url")->storePublicly("img", "public");
         }
+        
         $feature->title = $request->title;
         $feature->description = $request->description;
         $feature->p1 = $request->p1;

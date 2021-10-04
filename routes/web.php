@@ -34,16 +34,17 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::resource('backoffice/user', UserController::class);
-Route::resource('/backoffice/title', TitleDescriptionController::class);
-Route::resource('/backoffice/hero', HeroController::class);
-Route::resource('/backoffice/about', AboutController::class);
-Route::resource('/backoffice/about2', About2Controller::class);
-Route::resource('/backoffice/feature', FeatureController::class);
-Route::resource('/backoffice/team', TeamController::class);
-Route::resource('/backoffice/service', ServiceController::class);
-Route::resource('/backoffice/portfolio', PortfolioController::class);
-Route::resource('/backoffice/testimonials', TestimonialController::class);
-Route::resource('/backoffice/contact', ContactController::class);
+Route::resource('/backoffice/user', UserController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/title', TitleDescriptionController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/hero', HeroController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/about', AboutController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/about2', About2Controller::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/feature', FeatureController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/team', TeamController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/service', ServiceController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/portfolio', PortfolioController::class)->middleware(['auth','isWeb']);
+Route::resource('/backoffice/testimonials', TestimonialController::class)->middleware(['auth','isEdit']);
+Route::resource('/backoffice/contact', ContactController::class)->middleware(['auth','isWeb']);
+
 
 require __DIR__.'/auth.php';

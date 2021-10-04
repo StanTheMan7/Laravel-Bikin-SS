@@ -46,7 +46,7 @@ class TestimonialController extends Controller
         ]);
         $testimonial =  new Testimonial();
         $testimonial->text = $request->text;
-        $testimonial->photo->file('photo')->hashName();
+        $testimonial->photo = $request->file('photo')->hashName();
         $request->file("photo")->storePublicly("img", "public");
         $testimonial->name = $request->name;
         $testimonial->job = $request->job;
@@ -93,13 +93,13 @@ class TestimonialController extends Controller
         ]);
 
         if ($request->file('photo') !== null) {
-            Storage::disk('photo')->delete('/img' . $testimonial->photo);
+            Storage::disk('public')->delete('/img' . $testimonial->photo);
             $testimonial->photo= $request->file("photo")->hashName();
             $request->file("photo")->storePublicly("img", "public");
         }
-        $request->file("photo")->storePublicly("img", "public");
         $testimonial->name = $request->name;
         $testimonial->job = $request->job;
+        $testimonial->text = $request->text;
         $testimonial->save();
         return redirect()->route("testimonials.index");
     }
@@ -112,7 +112,8 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        Storage::disk('photo')->delete('/img' . $testimonial->photo);
+        $this->authorize('tes-del', $testimonial);
+        Storage::disk('public')->delete('/img' . $testimonial->photo);
         $testimonial->delete();
         return redirect()->route('testimonials.index');
     }

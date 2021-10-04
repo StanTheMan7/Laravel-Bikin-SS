@@ -5,9 +5,9 @@
 <div style="display: flex; justify-content:center;">
     <h1>Features</h1>
 </div>
-<div style="display: flex; justify-content:center;">
-    <a class="btn btn-info" href="{{route("feature.create")}}">Create</a>
-</div>
+  {{-- <div style="display: flex; justify-content:center;">
+      <a class="btn btn-info" href="{{route("feature.create")}}">Create</a>
+  </div> --}}
 <table class="table">
     <thead>
       <tr>

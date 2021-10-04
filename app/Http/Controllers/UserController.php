@@ -60,6 +60,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        $this->authorize('user-block', $user);
         return view('backoffice.users.show', compact('user'));
     }
 
@@ -71,6 +72,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('user-block', $user);
         return view('backoffice.users.edit', compact('user'));
     }
 
@@ -106,6 +108,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('user-block', $user);
         $user->delete();
         return redirect()->route('user.index');
     }

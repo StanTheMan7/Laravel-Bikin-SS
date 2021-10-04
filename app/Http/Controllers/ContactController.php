@@ -79,7 +79,7 @@ class ContactController extends Controller
         ]);
 
         $contact->address = $request->address;
-        $contact->main1 = $request->main1;
+        $contact->mail1 = $request->mail1;
         $contact->mail2 = $request->mail2;
         $contact->num1 = $request->num1;
         $contact->num2 = $request->num2;

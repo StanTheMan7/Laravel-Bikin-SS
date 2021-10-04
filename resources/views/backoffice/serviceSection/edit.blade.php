@@ -11,7 +11,7 @@
     <div style="display: flex; justify-content: center;">
     <div style="display:flex; flex-direction:column">
     <label for="">Title:</label>
-    <input type="file" name="title" value="{{$service->title}}">
+    <input type="text" name="title" value="{{$service->title}}">
     <br>
     <label for="">Name :</label>
     <input type="text" name="text" value="{{$service->text}}">

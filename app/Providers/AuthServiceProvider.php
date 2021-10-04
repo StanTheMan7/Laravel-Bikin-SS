@@ -27,11 +27,20 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('about-edit', function(User $user){
-             return in_array($user->role_id, [1,2]);
+            return in_array($user->role_id, [1,2]);
         });
         Gate::define('about2-edit', function(User $user){
             return in_array($user->role_id, [1,2]);
        });
+
+
+        Gate::define('user-block', function(User $user){
+            return in_array($user->role_id, [1]);
+       });
+
+       Gate::define('tes-del', function(User $user){
+            return in_array($user->role_id, [1,3]);
+        });
         
     }
 }

@@ -71,7 +71,7 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         request()->validate([
-            "tilte"=>["required"],
+            "title"=>["required"],
             "description"=>["required"],
             "bouton"=>["required"]
         ]);

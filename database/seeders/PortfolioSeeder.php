@@ -18,47 +18,47 @@ class PortfolioSeeder extends Seeder
             [
                 'url'=>'img/portfolio/portfolio-1.jpg',
                 'title'=>'App1',
-                'description'=>'App'
+                'description'=>'app'
             ],
             [
                 'url'=>'img/portfolio/portfolio-2.jpg',
                 'title'=>'Web3',
-                'description'=>'Web'
+                'description'=>'web'
             ],
             [
                 'url'=>'img/portfolio/portfolio-3.jpg',
                 'title'=>'App2',
-                'description'=>'App'
+                'description'=>'app'
             ],
             [
                 'url'=>'img/portfolio/portfolio-4.jpg',
                 'title'=>'Card2',
-                'description'=>'Card'
+                'description'=>'card'
             ],
             [
                 'url'=>'img/portfolio/portfolio-5.jpg',
                 'title'=>'Web2',
-                'description'=>'Web'
+                'description'=>'web'
             ],
             [
                 'url'=>'img/portfolio/portfolio-6.jpg',
                 'title'=>'App3',
-                'description'=>'App'
+                'description'=>'app'
             ],
             [
                 'url'=>'img/portfolio/portfolio-7.jpg',
                 'title'=>'Card1',
-                'description'=>'Card'
+                'description'=>'card'
             ],
             [
                 'url'=>'img/portfolio/portfolio-8.jpg',
                 'title'=>'Card3',
-                'description'=>'Card'
+                'description'=>'card'
             ],
             [
                 'url'=>'img/portfolio/portfolio-9.jpg',
                 'title'=>'Web3',
-                'description'=>'Web'
+                'description'=>'web'
             ]
         ]);
     }

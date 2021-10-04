@@ -14,16 +14,16 @@
     <input type="text" name="title" value="{{$feature->title}}">
     <br>
     <label for="">Description :</label>
-    <input type="text" name="text" value="{{$feature->description}}">
+    <input type="text" name="description" value="{{$feature->description}}">
     <br>
     <label for="">Url :</label>
     <input type="file" name="url" value="{{$feature->url}}">
     <br> <label for="">p1 :</label>
-    <input type="text" name="text" value="{{$feature->p1}}">
+    <input type="text" name="p1" value="{{$feature->p1}}">
     <br> <label for="">p2 :</label>
-    <input type="text" name="text" value="{{$feature->p2}}">
+    <input type="text" name="p2" value="{{$feature->p2}}">
     <br> <label for="">p3 :</label>
-    <input type="text" name="text" value="{{$feature->p3}}">
+    <input type="text" name="p3" value="{{$feature->p3}}">
     <br>
     </div>
     </div>

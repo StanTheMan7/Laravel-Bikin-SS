@@ -7,6 +7,7 @@ use App\Models\About2;
 use App\Models\Contact;
 use App\Models\Feature;
 use App\Models\Hero;
+use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
@@ -20,7 +21,7 @@ class HomeController extends Controller
         $heros = Hero::all();
         $contact = Contact::all();
         $abouts = About::first();
-
+        $portfolios = Portfolio::all();
         $about2s = About2::all();
 
         $features = Feature::all();
@@ -30,6 +31,6 @@ class HomeController extends Controller
         $testimonials = Testimonial::all();
         
         $services = Service::all();
-        return view('pages.homeUI',compact('contact', 'testimonials','services','titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
+        return view('pages.homeUI',compact('portfolios', 'contact', 'testimonials','services','titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
     }
 }

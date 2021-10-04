@@ -1,7 +1,6 @@
 <div class="sidebar">
     <div class="logo-details">
-        <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">CodingLab</div>
+        <div class="logo_name"><a href="/">Home</a></div>
         <i class='bx bx-menu' id="btn"></i>
     </div>
     <ul class="nav-list ">
@@ -86,13 +85,6 @@
             <span class="tooltip">Users</span>
         </li>
 
-        <li>
-            <a href="/backoffice/footer" class="text-light">
-                <i class='bx bx-text'></i>
-                <span class="links_name">Footer</span>
-            </a>
-                <span class="tooltip">Footer</span>
-            </li>
 
         <li class="profile">
             <div class="profile-details">
@@ -121,13 +113,7 @@
         </li>
 
         <li class="border border-light w-100 mt-2"></li>
-        <li class="mt-3">
-            <a href="/">
-                <i class='bx bx-home'></i>
-                <span class="tooltip">Home</span>
-            </a>
 
-        </li>
     </ul>
 </div>
 

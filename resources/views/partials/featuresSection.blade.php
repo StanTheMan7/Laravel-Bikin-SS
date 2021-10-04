@@ -17,7 +17,11 @@
         @if ($i%2)
           <div class="row content">
             <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-              <img src="{{asset('img/'. $item->url)}}" class="img-fluid" alt="">
+              @if (Storage::disk('public')->exists('img/' . $item->url))
+              <img class="img-fluid" src="{{ asset('img/' . $item->url) }}" alt="">
+              @else
+                <img class="img-fluid" src="{{ $item->url }}" alt="">
+              @endif
             </div>
             <div class="col-md-7 pt-5 order-2 order-md-1" item-aos="fade-right">
               <h3>{{$item->title}}</h3>

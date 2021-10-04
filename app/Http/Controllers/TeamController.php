@@ -88,7 +88,7 @@ class TeamController extends Controller
             "job"=>["required"],
         ]);
             if($request->file('url') !== null){
-                Storage::disk('url')->delete('/img' . $team->url);
+                Storage::disk('public')->delete('/img' . $team->url);
                 $team->url= $request->file("url")->hashName();
                 $request->file("url")->storePublicly("img", "public");
             }
@@ -107,7 +107,7 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        Storage::disk('url')->delete('/img' . $team->url);
+        Storage::disk('public')->delete('/img' . $team->url);
         $team->delete();
         return redirect()->route('team.index');
     }
