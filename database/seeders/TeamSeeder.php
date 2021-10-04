@@ -35,6 +35,26 @@ class TeamSeeder extends Seeder
                 "name"=>"Walter White",
                 "job"=>"Chief Executive Officer"
             ],
+            [
+                "url"=>"team/team-1.jpg",
+                "name"=>"Walter White",
+                "job"=>"Chief Executive Officer"
+            ],
+            [
+                "url"=>"team/team-2.jpg",
+                "name"=>"Walter White",
+                "job"=>"Chief Executive Officer"
+            ],
+            [
+                "url"=>"team/team-3.jpg",
+                "name"=>"Walter White",
+                "job"=>"Chief Executive Officer"
+            ],
+            [
+                "url"=>"team/team-4.jpg",
+                "name"=>"Walter White",
+                "job"=>"Chief Executive Officer"
+            ]
         ]);
     }
 }

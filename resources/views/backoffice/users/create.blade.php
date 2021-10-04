@@ -12,7 +12,6 @@
         <div style="display:flex; flex-direction:column">
     <input type="text" name="name" placeholder="name" value="{{ old('name') }}">
     <input type="text" name="email" placeholder="email" value="{{ old('email') }}">
-    <input type="text" name="email_verified_at" placeholder="email_verified_at" value="{{ old('email_verified_at') }}">
     <input type="file" name="password" placeholder="password" value="{{ old('password') }}">
     <input type="file" name="role_id" placeholder="role_id" value="{{ old('role_id') }}">
 
