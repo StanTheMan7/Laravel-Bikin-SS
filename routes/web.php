@@ -9,6 +9,7 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\HomeBackController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
@@ -46,5 +47,7 @@ Route::resource('/backoffice/portfolio', PortfolioController::class)->middleware
 Route::resource('/backoffice/testimonials', TestimonialController::class)->middleware(['auth','isEdit']);
 Route::resource('/backoffice/contact', ContactController::class)->middleware(['auth','isWeb']);
 
+// route pour email 
+Route::post('/send-email',[MailController::class ,'sendMail'])->name('sendMail');
 
 require __DIR__.'/auth.php';

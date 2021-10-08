@@ -18,6 +18,11 @@
     <label for="">Password :</label>
     <input type="text" name="password" value="{{$user->password}}">
     <br>
+    <select name="role_id" >
+        @foreach ($role as $item)
+        <option value="{{$item->id}}">{{$item->name}}</option>
+        @endforeach
+    </select>
     </div>
     </div>
 

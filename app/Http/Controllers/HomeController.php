@@ -12,6 +12,7 @@ use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\TitleDescription;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,8 +30,8 @@ class HomeController extends Controller
         $teams = Team::paginate(4);
 
         $testimonials = Testimonial::all();
-        
+        $users = User::all();
         $services = Service::all();
-        return view('pages.homeUI',compact('portfolios', 'contact', 'testimonials','services','titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams'));
+        return view('pages.homeUI',compact('portfolios', 'contact', 'testimonials','services','titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams','users'));
     }
 }

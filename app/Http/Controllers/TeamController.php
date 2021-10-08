@@ -15,7 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::all();
+        $teams = Team::all()->inRandomOrder('1','2','3','4')->paginate(4);
         return view('backoffice.teamSection.all', compact('teams'));
     }
 

@@ -16,9 +16,12 @@
     <label for="">Name :</label>
     <input type="text" name="title" value="{{$portfolio->title}}">
     <br>
-    <label for="">Text :</label>
-    <input type="text" name="description" value="{{$portfolio->description}}">
-    <br>
+    <label for="">Type :</label>
+    <select name="description">
+        <option value="web">Web</option>
+        <option value="card">Card</option>
+        <option value="app">App</option>
+    </select><br>
     </div>
     </div>
 

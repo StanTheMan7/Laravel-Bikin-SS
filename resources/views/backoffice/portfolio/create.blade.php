@@ -12,8 +12,11 @@
         <div style="display:flex; flex-direction:column">
     <input type="file" name="url" placeholder="url" value="{{ old('url') }}">
     <input type="text" name="title" placeholder="title" value="{{ old('title') }}">
-    <input type="text" name="description" placeholder="description" value="{{ old('description') }}">
-    <br>
+    <select name="description">
+        <option value="web">Web</option>
+        <option value="card">Card</option>
+        <option value="app">App</option>
+    </select><br>
     <button class="btn btn-success" type="submit">Validate</button>
         </div>
     </form>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -26,7 +28,8 @@ class UserController extends Controller
     public function create()
     {
         $this->authorize('user-block');
-        return view('backoffice.users.create');
+        $role = Role::all();
+        return view('backoffice.users.create', compact('role'));
     }
 
     /**
@@ -40,14 +43,16 @@ class UserController extends Controller
         request()->validate([
             'name'=> ['required'],
             'email' => ['required'],
-            'password' => ['required'],
+            'password' => ['required']
+            
         ]);
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->email_verified_at = $request->email_verified_at;
-        $user->password = $request->password;
+        // pour crypte le mot de pass
+        $user->password =  Hash::make($request->password) ;
         $user->role_id = $request->role_id;
         $user->save();
         return redirect()->route('user.index');

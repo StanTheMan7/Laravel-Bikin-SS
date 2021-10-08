@@ -11,12 +11,13 @@ use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\TitleDescription;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeBackController extends Controller
 {
     public function index() {
-
+        $users = User::all();
         $titleDescriptions = TitleDescription::all();
 
         $heros = Hero::all();
@@ -34,6 +35,6 @@ class HomeBackController extends Controller
         $testimonials =Testimonial::all();
         
         $portfolio = Portfolio::all();
-        return view('pages.homeBack',compact("services",'titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams','testimonials'));
+        return view('pages.homeBack',compact("services",'titleDescriptions', 'heros', 'abouts', 'about2s', 'features', 'teams','testimonials', 'users'));
     }
 }

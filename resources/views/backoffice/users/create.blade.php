@@ -13,11 +13,11 @@
     <input type="text" name="name" placeholder="name" value="{{ old('name') }}">
     <input type="text" name="email" placeholder="email" value="{{ old('email') }}">
     <input type="password" name="password" placeholder="password" value="{{ old('password') }}">
-    <input type="text" name="role_id" placeholder="rôle" value="{{ old('role_id') }}">
-    <span><i>Pour le rôle = 
-        <ol><li>1. Admin</li>
-        <li>2. Editeur</li>
-        <li>3. Webmaster</li></ol></i></span>
+    <select name="role_id" >
+        @foreach ($role as $item)
+        <option value="{{$item->id}}">{{$item->name}}</option>
+        @endforeach
+    </select>
     <br>
     <button class="btn btn-success" type="submit">Validate</button>
         </div>
