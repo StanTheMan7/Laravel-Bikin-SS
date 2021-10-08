@@ -37,9 +37,6 @@
         </td>
       </tr>    
     @endforeach
-    <div class="container">
-      {{$teams->links()}}
-    </div>
     </tbody>
   </table>
 
